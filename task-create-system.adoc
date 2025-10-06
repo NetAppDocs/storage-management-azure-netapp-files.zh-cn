@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-create-system.html 
 keywords: azure netapp files, create working environment, working environment, system, netapp console 
-summary: 设置 Microsoft Entra 应用程序后，在NetApp控制台中创建Azure NetApp Files系统，以便可以开始创建所需的卷。 
+summary: 设置 Microsoft Entra 应用程序后，在NetApp Console中创建Azure NetApp Files系统，以便可以开始创建所需的卷。 
 ---
-= 在NetApp控制台中创建Azure NetApp Files系统
+= 在NetApp Console中创建Azure NetApp Files系统
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 设置 Microsoft Entra 应用程序后，在NetApp控制台中创建Azu
 
 
 [role="lead"]
-设置 Microsoft Entra 应用程序并将凭据添加到NetApp控制台后，创建Azure NetApp Files系统，以便可以开始创建所需的卷。
+设置 Microsoft Entra 应用程序并将凭据添加到NetApp Console后，创建Azure NetApp Files系统，以便可以开始创建所需的卷。
 
 .步骤
 . 在系统页面中，选择*添加系统*。

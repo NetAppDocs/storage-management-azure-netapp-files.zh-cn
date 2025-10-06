@@ -74,10 +74,10 @@ image:screenshot-protocol-smb.png["设置 SMB 卷所需字段的屏幕截图。"
 
 == 挂载卷
 
-从NetApp控制台中访问安装说明，以便您可以将卷安装到主机。
+从NetApp Console中访问安装说明，以便您可以将卷安装到主机。
 
 .步骤
-. 在NetApp控制台中，打开Azure NetApp Files系统。
+. 在NetApp Console中，打开Azure NetApp Files系统。
 . 将光标移到音量上，然后选择三个点 `...`音量状态旁边。
 . 选择**安装卷**。
 +

@@ -27,13 +27,13 @@ Azure NetApp Files使企业能够在 Azure 中迁移和运行其性能密集型�
 
 
 
-=== NetApp控制台中的其他功能
+=== NetApp Console中的其他功能
 
-* 直接从NetApp控制台将 NFS 或 SMB 数据迁移到Azure NetApp Files。数据迁移由NetApp Copy 和 Sync 提供支持。
+* 直接从NetApp Console将 NFS 或 SMB 数据迁移到Azure NetApp Files。数据迁移由NetApp Copy and Sync提供支持。
 +
 https://docs.netapp.com/us-en/bluexp-copy-sync/concept-cloud-sync.html["了解有关复制和同步的更多信息"^]
 
-* 使用人工智能 (AI) 驱动的技术， NetApp数据分类可以帮助您了解数据上下文并识别驻留在Azure NetApp Files帐户中的敏感数据。
+* 使用人工智能 (AI) 驱动的技术， NetApp Data Classification可以帮助您了解数据上下文并识别驻留在Azure NetApp Files帐户中的敏感数据。
 +
 https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["了解有关数据分类的更多信息"^]
 
@@ -41,15 +41,15 @@ https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.htm
 
 
 
-== NetApp控制台
+== NetApp Console
 
-可通过NetApp控制台访问Azure NetApp Files 。
+可以通过NetApp Console访问Azure NetApp Files 。
 
-NetApp控制台提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
+NetApp Console提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
 
-您不需要许可证或订阅即可开始使用NetApp控制台，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
+您不需要许可证或订阅即可开始使用NetApp Console，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
 
-详细了解link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp控制台"^]。
+详细了解link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"^]。
 
 
 
@@ -75,7 +75,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["查看受支持的 Azure
 
 == 相关链接
 
-* link:https://bluexp.netapp.com/azure-netapp-files["NetApp控制台网站： Azure NetApp Files"^]
+* link:https://bluexp.netapp.com/azure-netapp-files["NetApp Console网站： Azure NetApp Files"^]
 * link:https://learn.microsoft.com/azure/azure-netapp-files/["Azure NetApp Files文档"^]
 * link:https://docs.netapp.com/us-en/bluexp-copy-sync/index.html["复制和同步文档"^]
 

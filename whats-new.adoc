@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, netapp console' 
-summary: 了解NetApp控制台中Azure NetApp Files支持的新增功能。 
+summary: 了解NetApp Console中Azure NetApp Files支持的新增功能。 
 ---
 = 什么是新的
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 了解NetApp控制台中Azure NetApp Files支持的新增功能。
 
 
 [role="lead"]
-了解NetApp控制台中Azure NetApp Files 的新功能。
+了解NetApp Console中Azure NetApp Files 的新增功能。
 
 
 
@@ -22,13 +22,13 @@ summary: 了解NetApp控制台中Azure NetApp Files支持的新增功能。
 
 
 
-=== BlueXP现在是NetApp控制台
+=== BlueXP现在是NetApp Console
 
 BlueXP已重新命名并重新设计，以更好地反映其在管理数据基础设施中的作用。
 
-NetApp控制台提供企业级跨本地和云环境的存储和数据服务的集中管理，提供实时洞察、更快的工作流程和简化的管理。
+NetApp Console提供企业级跨本地和云环境的存储和数据服务的集中管理，提供实时洞察、更快的工作流程和简化的管理。
 
-有关更改的详细信息，请参阅 https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp控制台发行说明"]。
+有关更改的详细信息，请参阅 https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp Console发行说明"]。
 
 
 
@@ -108,7 +108,7 @@ Cloud Manager 使您能够创建、删除和恢复卷快照。您还可以创建
 * 通过更改卷的大小和管理标签来编辑卷。
 
 
-直接从 Cloud Manager 创建和管理Azure NetApp Files的功能取代了以前的数据迁移功能。
+直接从 Cloud Manager 创建和管理Azure NetApp Files的能力取代了以前的数据迁移功能。
 
 
 
