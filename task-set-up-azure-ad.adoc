@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: task-set-up-azure-ad.html 
+keywords: azure netapp files, azure netapp files permissions, azure permissions, active directory, application, ad application, ad app, app, service principal 
+summary: NetApp控制台需要权限来设置和管理Azure NetApp Files。您可以通过创建和设置 Microsoft Entra 应用程序并获取控制台所需的 Azure 凭据来向 Azure 帐户授予所需的权限。 
+---
+= 设置 Microsoft Entra 应用程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp控制台需要权限来设置和管理Azure NetApp Files。您可以通过创建和设置 Microsoft Entra 应用程序并获取控制台所需的 Azure 凭据来向 Azure 帐户授予所需的权限。
+
+
+
+== 步骤 1：创建应用程序
+
+创建控制台可用于基于角色的访问控制的 Microsoft Entra 应用程序和服务主体。
+
+.开始之前
+您必须在 Azure 中拥有正确的权限才能创建 Active Directory 应用程序并将该应用程序分配给角色。有关详细信息，请参阅 https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Microsoft Azure 文档：所需权限"^]。
+
+.步骤
+. 从 Azure 门户打开 *Microsoft Entra ID* 服务。
++
+image:screenshot_azure_ad.png["显示 Microsoft Azure 中的 Active Directory 服务的屏幕截图。"]
+
+. 在菜单中，选择*应用程序注册*。
+. 创建应用程序：
++
+.. 选择*新注册*。
+.. 指定有关应用程序的详细信息：
++
+*** *名称*：输入应用程序的名称。
+*** *帐户类型*：选择帐户类型（任何类型都可以与控制台一起使用）。
+*** *重定向 URI*：您可以将其留空。
+
+
+.. 选择*注册*。
+
+
+. 复制*应用程序（客户端）ID*和*目录（租户）ID*。
++
+image:screenshot_anf_app_ids.gif["显示 Microsoft Entra ID 中应用程序的应用程序（客户端）ID 和目录（租户）ID 的屏幕截图。"]
+
++
+在控制台中创建Azure NetApp Files系统时，您需要提供应用程序（客户端）ID 和应用程序的目录（租户）ID。控制台使用 ID 以编程方式登录。
+
+. 为应用程序创建客户端密钥，以便控制台可以使用它来通过 Microsoft Entra ID 进行身份验证：
++
+.. 选择*证书和机密>新客户端机密*。
+.. 提供秘密的描述和持续时间。
+.. 选择“*添加*”。
+.. 复制客户端机密的值。
++
+image:screenshot_anf_client_secret.gif["Azure 门户的屏幕截图，显示了 Microsoft Entra 服务主体的客户端机密。"]
+
+
+
+
+
+.结果
+您的 AD 应用程序现已设置完毕，您应该已经复制了应用程序（客户端）ID、目录（租户）ID 和客户端密钥的值。添加Azure NetApp Files系统时，需要在控制台中输入此信息。
+
+
+
+== 步骤 2：将应用分配给角色
+
+您必须将服务主体绑定到您的 Azure 订阅并为其分配具有所需权限的自定义角色。
+
+.步骤
+. https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles["在 Azure 中创建自定义角色"^] 。
++
+以下步骤介绍如何从 Azure 门户创建角色。
+
++
+.. 打开订阅并选择*访问控制（IAM）*。
+.. 选择*添加 > 添加自定义角色*。
++
+image:screenshot_azure_access_control.gif["显示在 Azure 门户中添加自定义角色的步骤的屏幕截图。"]
+
+.. 在“*基础*”选项卡中，输入角色的名称和描述。
+.. 选择 *JSON*，然后选择出现在 JSON 格式右上角的 *编辑*。
+.. 在_actions_下添加以下权限：
++
+[source, json]
+----
+"actions": [
+    "Microsoft.NetApp/*",
+    "Microsoft.Resources/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/write",
+    "Microsoft.Network/virtualNetworks/read",
+    "Microsoft.Network/virtualNetworks/subnets/read",
+    "Microsoft.Insights/Metrics/Read"
+    ],
+----
+.. 选择*保存* > *下一步*，然后选择*创建*。
+
+
+. 将应用程序分配给您刚刚创建的角色：
++
+.. 从 Azure 门户打开“*订阅*”。
+.. 选择订阅。
+.. 选择“访问控制 (IAM)”>“添加”>“添加角色分配”。
+.. 在“*角色*”选项卡中，选择您创建的自定义角色，然后单击“*下一步*”。
+.. 在“*成员*”选项卡中，完成以下步骤：
++
+*** 保持选中“*用户、组或服务主体*”。
+*** 选择*选择成员*。
++
+image:screenshot-azure-anf-role.png["向应用程序添加角色时显示“成员”选项卡的 Azure 门户屏幕截图。"]
+
+*** 搜索应用程序的名称。
++
+以下是一个例子：
+
++
+image:screenshot_anf_app_role.png["Azure 门户的屏幕截图，显示了 Azure 门户中的“添加角色分配”表单。"]
+
+*** 选择应用程序然后*选择*。
+*** 选择“下一步”。
+
+
+.. 选择*审阅+分配*。
++
+控制台的服务主体现在具有该订阅所需的 Azure 权限。
+
+
+
+
+
+
+
+== 步骤 3：将凭证添加到控制台
+
+创建Azure NetApp Files系统时，系统会提示您选择与服务主体关联的凭据。您需要在创建系统之前将这些凭据添加到控制台。
+
+.步骤
+. 在控制台的左侧导航中，选择**管理**>**凭据**。
+. 选择“*添加凭据*”并按照向导中的步骤操作。
++
+.. *凭证位置*：选择*Microsoft Azure > NetApp控制台*。
+.. *定义凭据*：输入有关授予所需权限的 Microsoft Entra 服务主体的信息：
++
+*** 客户端机密
+*** 应用程序（客户端）ID
+*** 目录（租户）ID
++
+你应该在以下情况下获取此信息：<<create-AD-application,创建了 AD 应用程序>> 。
+
+
+
+.. *审核*：确认有关新凭证的详细信息，然后选择*添加*。
+
+
+

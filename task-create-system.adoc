@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task-create-system.html 
+keywords: azure netapp files, create working environment, working environment, system, netapp console 
+summary: 设置 Microsoft Entra 应用程序后，在NetApp控制台中创建Azure NetApp Files系统，以便可以开始创建所需的卷。 
+---
+= 在NetApp控制台中创建Azure NetApp Files系统
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+设置 Microsoft Entra 应用程序并将凭据添加到NetApp控制台后，创建Azure NetApp Files系统，以便可以开始创建所需的卷。
+
+.步骤
+. 在系统页面中，选择*添加系统*。
+. 选择“Microsoft Azure”。
+. 在“Azure NetApp Files”旁边，选择“发现”。
+. 在“详细信息”页面上，输入系统名称并选择您之前设置的凭据。
+. 选择*继续*。
+
+
+.结果
+您现在拥有一个Azure NetApp Files系统。
+
+image:screenshot-azure-netapp-files-system.gif["Azure NetApp Files系统的屏幕截图。"]
+
+.下一步是什么？
+link:task-create-volumes.html["开始创建和管理卷"] 。

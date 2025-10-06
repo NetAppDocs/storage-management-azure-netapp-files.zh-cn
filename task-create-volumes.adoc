@@ -1,0 +1,87 @@
+---
+sidebar: sidebar 
+permalink: task-create-volumes.html 
+keywords: azure netapp files, create volumes, create nfs volumes, netapp account, capacity pool, create capacity pool, mount path, get mount path, find mount path, mount volume 
+summary: 设置系统后，您可以创建Azure NetApp Files帐户、容量池和卷。 
+---
+= 创建并挂载卷
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+设置系统后，您可以创建Azure NetApp Files帐户、容量池和卷。
+
+
+
+== 创建卷
+
+您可以在新的或现有的Azure NetApp Files帐户中创建 NFS 或 SMB 卷。
+
+.开始之前
+* 如果要使用 SMB，则必须设置 DNS 和 Active Directory。
+* 当计划创建 SMB 卷时，您必须有一个可以连接的 Windows Active Directory 服务器。您将在创建卷时输入此信息。
+
+
+.步骤
+. 打开Azure NetApp Files系统。
+. 选择“添加新卷”。
+. 在每个页面上提供所需的信息：
++
+** * Azure NetApp Files帐户*：选择现有的Azure NetApp Files帐户或创建新帐户。创建新帐户时，还必须选择资源组。您可以使用现有的资源组或创建一个新的资源组。
++
+image:screenshot_anf_create_account.png["创建Azure NetApp Files帐户所需字段的屏幕截图，其中包括名称、Azure 订阅、位置和资源组。"]
+
+** *容量池*：选择现有的容量池或创建新的容量池。
++
+如果创建新的容量池，请指定大小和 https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["服务水平"^]。
+
++
+容量池的最小大小为 1 TB。
+
++
+image:screenshot-create-capacity-pool.png["创建容量池菜单的屏幕截图。"]
+
+** *详细信息和标签*：输入卷名称和大小、卷所在的 VNet 和子网，并可选择为卷指定标签。选择*标准*或*基本*网络。 *标准* 支持虚拟网络 (VNet) 功能，而 *基本* 减少了 IP 限制并且没有针对卷的额外 VNet 功能。有关更多信息，请参阅link:https://learn.microsoft.com/azure/azure-netapp-files/configure-network-features["配置网络要素"^] 。
++
+image:screenshot-create-volume.gif["创建卷选项的屏幕截图。"]
+
+** *协议*：选择 NFS 或 SMB 协议并输入所需信息。
++
+如果选择 NFS，则必须输入 *卷路径*、选择 *NFS 版本* 并设置 *导出策略*。
+
++
+image:screenshot-protocol-nfs.png["设置 NFS 卷所需字段的屏幕截图。"]
+
++
+如果选择 SMB，则必须输入**卷路径**，然后使用**DNS 主 IP 地址**和 Active Directory 配置详细信息配置 SMB 连接。
+
++
+image:screenshot-protocol-smb.png["设置 SMB 卷所需字段的屏幕截图。"]
+
+
+
+. 如果您希望基于现有卷的快照创建此卷，请从快照名称下拉列表中选择快照。
+. 选择*添加卷*。
+. 创建卷后，您应该继续<<挂载卷,挂载云卷>>。
+
+
+
+
+== 挂载卷
+
+从NetApp控制台中访问安装说明，以便您可以将卷安装到主机。
+
+.步骤
+. 在NetApp控制台中，打开Azure NetApp Files系统。
+. 将光标移到音量上，然后选择三个点 `...`音量状态旁边。
+. 选择**安装卷**。
++
+image:screenshot-volume-options.png["将光标悬停在卷上时可用的操作的屏幕截图。"]
+
+. 按照说明安装该卷。
+

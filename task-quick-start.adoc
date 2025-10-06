@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: set up azure netapp files, quick start 
+summary: 通过设置 Microsoft Entra 应用程序和创建系统开始使用Azure NetApp Files 。 
+---
+= 入门工作流程
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+通过设置 Microsoft Entra 应用程序和创建系统开始使用Azure NetApp Files 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] link:task-set-up-azure-ad.html["设置 Microsoft Entra 应用程序"]
+[role="quick-margin-para"]
+从 Azure 向 Microsoft Entra 应用程序授予权限并复制应用程序（客户端）ID、目录（租户）ID 和客户端机密的值。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] link:task-create-system.html["创建Azure NetApp Files系统"]
+[role="quick-margin-para"]
+从NetApp控制台中的“系统”页面中，选择“添加系统”>“Microsoft Azure”>“Azure NetApp Files”，然后提供有关 Active Directory 应用程序的详细信息。

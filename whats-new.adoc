@@ -1,0 +1,121 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, netapp console' 
+summary: 了解NetApp控制台中Azure NetApp Files支持的新增功能。 
+---
+= 什么是新的
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+了解NetApp控制台中Azure NetApp Files 的新功能。
+
+
+
+== 2025年10月6日
+
+
+
+=== BlueXP现在是NetApp控制台
+
+BlueXP已重新命名并重新设计，以更好地反映其在管理数据基础设施中的作用。
+
+NetApp控制台提供企业级跨本地和云环境的存储和数据服务的集中管理，提供实时洞察、更快的工作流程和简化的管理。
+
+有关更改的详细信息，请参阅 https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp控制台发行说明"]。
+
+
+
+== 2025年1月13日
+
+
+
+=== BlueXP现在支持网络功能
+
+从BlueXP配置Azure NetApp Files中的卷时，您现在可以指示网络功能。这与本机Azure NetApp Files中提供的功能一致。
+
+
+
+== 2024年6月12日
+
+
+
+=== 需要新的许可
+
+现在需要以下权限才能从BlueXP管理Azure NetApp Files卷：
+
+Microsoft.Network/virtualNetworks/子网/读取
+
+读取虚拟网络子网需要此权限。
+
+如果您当前正在从BlueXP管理Azure NetApp Files，则需要将此权限添加到与您之前创建的 Microsoft Entra 应用程序关联的自定义角色。
+
+https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-set-up-azure-ad.html["了解如何设置 Microsoft Entra 应用程序并查看自定义角色权限"] 。
+
+
+
+== 2024年4月22日
+
+
+
+=== 不再支持卷模板
+
+您无法再从模板创建卷。此操作与BlueXP修复服务相关，但该服务不再可用。
+
+
+
+== 2021年4月11日
+
+
+
+=== 支持卷模板
+
+新的应用程序模板服务使您能够为Azure NetApp Files设置卷模板。模板应该使您的工作更轻松，因为某些卷参数已经在模板中定义，例如容量池、大小、协议、卷应驻留的 VNet 和子网等等。当一个参数已经预先定义时，您可以直接跳到下一个音量参数。
+
+
+
+== 2021年3月8日
+
+
+
+=== 动态改变服务级别
+
+您现在可以动态更改卷的服务级别以满足工作负载需求并优化成本。卷被移动到另一个容量池，但对卷没有影响。
+
+https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-manage-volumes.html#change-the-volumes-service-level["了解如何更改卷的服务级别"] 。
+
+
+
+== 2020年8月3日
+
+
+
+=== Azure NetApp Files设置和管理
+
+直接从 Cloud Manager 设置和管理Azure NetApp Files。创建Azure NetApp Files系统后，可以完成以下任务：
+
+* 创建 NFS 和 SMB 卷。
+* 管理容量池和卷快照
++
+Cloud Manager 使您能够创建、删除和恢复卷快照。您还可以创建新的容量池并指定其服务级别。
+
+* 通过更改卷的大小和管理标签来编辑卷。
+
+
+直接从 Cloud Manager 创建和管理Azure NetApp Files的功能取代了以前的数据迁移功能。
+
+
+
+== 2020年4月5日
+
+
+
+=== 数据迁移到Azure NetApp Files
+
+您现在可以直接从 Cloud Manager 将 NFS 或 SMB 数据迁移到Azure NetApp Files 。数据同步由BlueXP copy and sync提供支持。
